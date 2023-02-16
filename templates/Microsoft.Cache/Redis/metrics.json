@@ -14,7 +14,7 @@
                 "unhealthyThreshold": "85",
                 "unhealthyOperator": "GreaterThan",
                 "dataType": "Numeric",
-                "recommended": true,
+                "recommended": "true"
             }
         ]
     }
