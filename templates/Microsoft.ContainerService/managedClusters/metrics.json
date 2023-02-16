@@ -1,19 +1,13 @@
 [
     {
-        "provider": "Microsoft.ContainerService",
-        "type": "managedClusters",
-        "metrics": [
-            {
-                "metricName": "node_cpu_usage_percentage",
-                "aggregationType": "Average",
-                "timeGrain": "PT30M",
-                "degradedThreshold": "75",
-                "degradedOperator": "GreaterThan",
-                "unhealthyThreshold": "85",
-                "unhealthyOperator": "GreaterThan",
-                "dataType": "Numeric",
-                "recommended": "true"
-            }
-        ]
+        "metricName": "node_cpu_usage_percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "dataType": "Numeric",
+        "recommended": "true"
     }
 ]
