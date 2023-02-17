@@ -1,0 +1,14 @@
+[
+    {
+        "queryType": "ResourceMetricsQuery",
+        "metricName": "ServerErrors",
+        "aggregationType": "Average",
+        "timeGrain": "PT1H",
+        "degradedThreshold": "1",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "10",
+        "unhealthyOperator": "GreaterThan",
+        "dataUnit": "Count",
+        "recommended": "true"
+     }
+]
