@@ -1,0 +1,41 @@
+[
+    {
+        "metricName": "serverLoad",
+        "description": "Server load of the Redis cache.",
+        "reference": "https://link/to/more/information",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "dataType": "Numeric",
+        "recommended": "true"
+    },
+    {
+        "metricName": "usedmemorypercentage",
+        "description": "Percentage of used memory of the Redis cache.",
+        "reference": "https://link/to/more/information",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "dataType": "Numeric",
+        "recommended": "true"
+    },
+    {
+        "metricName": "errors",
+        "description": "Number of errors of the Redis cache.",
+        "reference": "https://link/to/more/information",
+        "aggregationType": "Average",
+        "timeGrain": "PT1H",
+        "degradedThreshold": "10",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "20",
+        "unhealthyOperator": "GreaterThan",
+        "dataType": "Numeric",
+        "recommended": "true"
+    }
+]
