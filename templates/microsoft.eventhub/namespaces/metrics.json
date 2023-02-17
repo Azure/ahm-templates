@@ -1,6 +1,5 @@
 [
     {
-        "queryType": "ResourceMetricsQuery",
         "metricName": "ServerErrors",
         "aggregationType": "Average",
         "timeGrain": "PT1H",
