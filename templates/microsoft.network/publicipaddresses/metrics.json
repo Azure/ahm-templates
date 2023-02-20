@@ -1,0 +1,13 @@
+[
+    {
+        "metricName": "VipAvailability",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "dataUnit": "Count",
+        "recommended": "true"
+     }
+]
