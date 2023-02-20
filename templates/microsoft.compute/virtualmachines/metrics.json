@@ -1,0 +1,13 @@
+[
+    {
+        "metricName": "Percentage CPU",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "dataUnit": "Percent",
+        "recommended": "true"
+    }
+]

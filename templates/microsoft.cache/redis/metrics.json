@@ -9,7 +9,7 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "85",
         "unhealthyOperator": "GreaterThan",
-        "dataType": "Numeric",
+        "dataUnit": "Percent",
         "recommended": "true"
     },
     {
@@ -22,7 +22,7 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "85",
         "unhealthyOperator": "GreaterThan",
-        "dataType": "Numeric",
+        "dataUnit": "Percent",
         "recommended": "true"
     },
     {

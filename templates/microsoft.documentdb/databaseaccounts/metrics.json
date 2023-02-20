@@ -1,0 +1,13 @@
+[
+    {
+        "metricName": "ServiceAvailability",
+        "aggregationType": "Average",
+        "timeGrain": "PT1H",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "dataUnit": "Percent",
+        "recommended": "true"
+     }
+]
