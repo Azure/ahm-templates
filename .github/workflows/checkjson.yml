@@ -19,5 +19,5 @@ jobs:
 
           $files |% {
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
-            ./.github/scripts/validateMetrics.ps1 -jsonfile $($_.FullName) -schemafile ./templates/metrics.json
+            ./.github/scripts/validateMetrics.ps1 -jsonfile $($_.FullName) -schemafile ./templates/metrics.schema.json
           }
