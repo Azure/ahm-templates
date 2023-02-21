@@ -9,5 +9,16 @@
         "unhealthyOperator": "LowerThan",
         "dataUnit": "Percent",
         "recommended": "true"
-    }
+    },
+    {
+        "metricName": "SaturationShoebox",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "25",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "50",
+        "unhealthyOperator": "GreaterThan",
+        "dataUnit": "Percent",
+        "recommended": "true"
+     }
 ]

@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest #ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: 'Validate JSON Schema for metrics.json'
