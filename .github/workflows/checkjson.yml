@@ -9,11 +9,11 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest #ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: 'Validate JSON Schema for metrics.json'
-        shell: powershell # pwsh
+        shell: pwsh
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
