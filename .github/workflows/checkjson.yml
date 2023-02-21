@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Validate JSON Schema for metrics.json'
-        shell: pwsh
+        shell: powershell # pwsh
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
