@@ -1,6 +1,7 @@
 name: JSON schema validation
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'metrics.json'
