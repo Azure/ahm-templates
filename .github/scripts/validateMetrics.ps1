@@ -14,7 +14,7 @@ if (!(Test-Path $jsonfile)) {
     Write-Error "*** File $jsonfile not found."
     exit
 } else {
-    $json = Get-Content -Path $jsonfile -Raw | convertfrom-json | convertto-json
+    $json = Get-Content -Path $jsonfile -Raw | convertfrom-json -noenumerate | convertto-json
 }
 
 
