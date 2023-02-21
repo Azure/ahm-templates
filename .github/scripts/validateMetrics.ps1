@@ -17,10 +17,12 @@ if (!(Test-Path $jsonfile)) {
     $json = Get-Content -Path $jsonfile -Raw | convertfrom-json | convertto-json
 }
 
-$json
+
 
 if (!(Test-Json -Json $json -schemafile $schemafile)) {
     Write-Error "File $jsonfile does not contain valid JSON."
+    
+    $json
 } else {
     Write-Host "$jsonfile validated against $schemafile"
 }
