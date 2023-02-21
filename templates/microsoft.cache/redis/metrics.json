@@ -35,7 +35,7 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "20",
         "unhealthyOperator": "GreaterThan",
-        "dataType": "Numeric",
+        "dataUnit": "Count",
         "recommended": "true"
     }
 ]

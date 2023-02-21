@@ -1,9 +1,9 @@
-name: JSON syntax check
+name: JSON schema validation
 
 on:
   push:
     paths:
-      - '**.json'
+      - 'metrics.json'
   pull_request:
 
 jobs:
@@ -11,7 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: json-syntax-check
-        uses: limitusus/json-syntax-check@v1
-        with:
-          pattern: "\\.json$"
+      - name: 'Validate JSON Schema for metrics.json'
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
+
+          $files |% {
+            Write-Host "Found $($file.Fullname). Validate JSON Schema."
+            ./.github/scripts/validateMetrics.ps1 -jsonfile $($file.FullName) -schemafile ./templates/metrics.json
+          }

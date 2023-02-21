@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "additionalItems": true,
+    "additionalProperties": {
+        "reference": "string",
+        "description": "string",
+        "recommended": "boolean"
+    },
+    "items": [
+      {
+        "type": "object",
+        "properties": {
+          "metricName": {
+            "type": "string"
+          },
+          "aggregationType": {
+            "type": "string"
+          },
+          "timeGrain": {
+            "type": "string"
+          },
+          "degradedThreshold": {
+            "type": "string"
+          },
+          "degradedOperator": {
+            "type": "string"
+          },
+          "unhealthyThreshold": {
+            "type": "string"
+          },
+          "unhealthyOperator": {
+            "type": "string"
+          },
+          "dataUnit": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "metricName",
+          "aggregationType",
+          "timeGrain",
+          "degradedThreshold",
+          "degradedOperator",
+          "unhealthyThreshold",
+          "unhealthyOperator",
+          "dataUnit"
+        ]
+      }
+    ]
+}
