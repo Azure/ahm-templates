@@ -18,6 +18,6 @@ jobs:
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
           $files |% {
-            Write-Host "Found $($file.Fullname). Validate JSON Schema."
-            ./.github/scripts/validateMetrics.ps1 -jsonfile $($file.FullName) -schemafile ./templates/metrics.json
+            Write-Host "Found $($_.Fullname). Validate JSON Schema."
+            ./.github/scripts/validateMetrics.ps1 -jsonfile $($_.FullName) -schemafile ./templates/metrics.schema.json
           }
