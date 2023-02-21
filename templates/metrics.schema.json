@@ -1,11 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
     "additionalItems": true,
     "additionalProperties": {
         "reference": "string",
         "description": "string",
-        "recommended": "boolean"
+        "recommended": "string"
     },
+    "minItems": 1,
     "items": [
       {
         "type": "object",

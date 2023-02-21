@@ -4,7 +4,7 @@
         "description": "Server load of the Redis cache.",
         "reference": "https://link/to/more/information",
         "aggregationType": "Average",
-        "timeGrain": "PT30M",
+        "timeGrain2": "PT30M",
         "degradedThreshold": "75",
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "85",
