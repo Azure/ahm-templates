@@ -2,10 +2,10 @@ name: JSON schema validation
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'metrics.json'
-  pull_request:
+  # push:
+  #   paths:
+  #     - 'metrics.json'
+  # pull_request:
 
 jobs:
   test:
