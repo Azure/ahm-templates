@@ -1,0 +1,24 @@
+[
+    {
+        "metricName": "VipAvailability",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "dataUnit": "Count",
+        "recommended": "true"
+     },
+     {
+        "metricName": "DipAvailability",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "dataUnit": "Count",
+        "recommended": "true"
+     }
+]
