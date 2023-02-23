@@ -25,9 +25,9 @@
         "metricName": "ServiceApiLatency",
         "aggregationType": "Average",
         "timeGrain": "PT15M",
-        "degradedThreshold": "10",
+        "degradedThreshold": "50",
         "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "20",
+        "unhealthyThreshold": "100",
         "unhealthyOperator": "GreaterThan",
         "dataUnit": "MilliSeconds"
      }
