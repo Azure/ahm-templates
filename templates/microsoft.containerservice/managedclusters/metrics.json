@@ -7,7 +7,7 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "85",
         "unhealthyOperator": "GreaterThan",
-        "dataType": "Numeric",
+        "dataUnit": "Percent",
         "recommended": "true"
     },
     {
