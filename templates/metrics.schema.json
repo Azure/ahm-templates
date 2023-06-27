@@ -3,8 +3,6 @@
     "type": "array",
     "additionalItems": true,
     "additionalProperties": {
-        "reference": "string",
-        "description": "string",
         "recommended": "string"
     },
     "minItems": 1,

@@ -1,8 +1,6 @@
 [
     {
         "metricName": "Availability",
-        "description": "Availability of a storage account.",
-        "reference": "https://link/to/more/information",
         "aggregationType": "Minimum",
         "timeGrain": "PT15M",
         "degradedThreshold": "100",
@@ -13,8 +11,6 @@
     },
     {
         "metricName": "SuccessE2ELatency",
-        "description": "SuccessE2ELatency of a storage account.",
-        "reference": "https://link/to/more/information",
         "aggregationType": "Average",
         "timeGrain": "PT5M",
         "degradedThreshold": "10",
@@ -25,8 +21,6 @@
     },
     {
         "metricName": "SuccessServerLatency",
-        "description": "SuccessServerLatency of a storage account.",
-        "reference": "https://link/to/more/information",
         "aggregationType": "Average",
         "timeGrain": "PT5M",
         "degradedThreshold": "10",
