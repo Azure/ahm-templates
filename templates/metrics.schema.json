@@ -32,9 +32,6 @@
           },
           "unhealthyOperator": {
             "type": "string"
-          },
-          "dataUnit": {
-            "type": "string"
           }
         },
         "required": [
@@ -44,8 +41,7 @@
           "degradedThreshold",
           "degradedOperator",
           "unhealthyThreshold",
-          "unhealthyOperator",
-          "dataUnit"
+          "unhealthyOperator"
         ]
       }
     ]

@@ -9,7 +9,6 @@
         "degradedOperator": "LowerThan",
         "unhealthyThreshold": "99",
         "unhealthyOperator": "LowerThan",
-        "dataUnit": "Percent",
         "recommended": "true"
     },
     {
@@ -22,7 +21,6 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "15",
         "unhealthyOperator": "GreaterThan",
-        "dataUnit": "MilliSeconds",
         "recommended": "false"
     },
     {
@@ -35,7 +33,6 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "15",
         "unhealthyOperator": "GreaterThan",
-        "dataUnit": "MilliSeconds",
         "recommended": "false"
     }
 ]

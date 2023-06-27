@@ -7,7 +7,6 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "90",
         "unhealthyOperator": "GreaterThan",
-        "dataUnit": "Percent",
         "recommended": "true"
     }
 ]
