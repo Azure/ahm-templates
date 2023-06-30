@@ -1,23 +1,25 @@
-name: JSON schema validation
+name: 'Validate metrics.json schema'
 
 on:
   workflow_dispatch:
-  # push:
-  #   paths:
-  #     - 'metrics.json'
-  # pull_request:
+  push:
+    paths:
+      - 'metrics.json'
+  pull_request:
 
 jobs:
   test:
+    name: 'Validate metrics.json schema'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: 'Validate JSON Schema for metrics.json'
+        id: validation
         shell: pwsh
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
           $files |% {
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
-            ./.github/scripts/validateMetrics.ps1 -jsonfile $($_.FullName) -schemafile ./templates/metrics.schema.json
+            ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }

@@ -1,29 +1,67 @@
-param (
-    [Parameter(Mandatory)]
-    [string] $jsonfile,
-    [string] $schemafile = "./templates/metrics.schema.json"
+# validateMetrics.ps1
+# Validates the schema of the metrics.json file.
+# This script is used by the GitHub Actions workflow.
 
+param (
+    [Parameter(Mandatory = $true)]
+    [string]$metricsFile
 )
 
-if (!(Test-Path $schemafile)) {
-    Write-Error "*** Schemafile $schemafile not found."
-    exit
+# Test if metrics.json exists
+if (-not (Test-Path $metricsFile)) {
+    Write-Host "Metrics file not found at '$metricsFile'."
+    exit 1
 }
 
-if (!(Test-Path $jsonfile)) {
-    Write-Error "*** File $jsonfile not found."
-    exit
+# Convert JSON to PowerShell objects
+$objects = Get-Content $metricsFile | ConvertFrom-Json
+
+# Define the expected schema
+$schema = @{
+    metricName         = [string]
+    aggregationType    = [string]
+    timeGrain          = [string]
+    degradedThreshold  = [string]
+    degradedOperator   = [string]
+    unhealthyThreshold = [string]
+    unhealthyOperator  = [string]
+    recommended        = [string]
+}
+
+# Define allowed values for specific properties
+$allowedValues = @{
+    aggregationType = @("Average","Maximum","Minimum")
+    degradedOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
+    unhealthyOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
+    recommended = @("true", "false")
+}
+
+# Validate each object against the schema
+$isSchemaValid = $true
+
+$errorCount = 0
+
+foreach ($object in $objects) {
+    foreach ($property in $schema.Keys) {
+        # Check if the property exists
+        if ($object.$property -isnot $schema[$property]) {
+            Write-Host "::error file=$metricsFile::Invalid schema detected for '$property'."
+            $isSchemaValid = $false
+            break
+        }
+
+        # Check if the property value is in the allowed values array
+        if ($allowedValues.ContainsKey($property) -and $object.$property -notin $allowedValues[$property]) {
+            Write-Host "::error file=$metricsFile::Invalid value detected for '$property'. Set to $($object.$property). Allowed values are $($allowedValues[$property])."
+            $isSchemaValid = $false
+            break
+        }
+    }
+}
+
+if ($isSchemaValid) {
+    Write-Host "Schema validation successful for $metricsFile."
 } else {
-    $json = Get-Content -Path $jsonfile -Raw -encoding UTF8 | convertfrom-json -noenumerate | convertto-json
+    Write-Host "Schema validation failed for $metricsFile."
+    exit 1
 }
-
-
-
-if (!(Test-Json -Json $json -schemafile $schemafile)) {
-    Write-Error "*** File $jsonfile does not contain valid JSON."
-    
-    $json
-} else {
-    Write-Host "*** Successfully validated $jsonfile against $schemafile"
-}
-
