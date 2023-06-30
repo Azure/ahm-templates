@@ -26,6 +26,7 @@
         "degradedThreshold": "50",
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "100",
-        "unhealthyOperator": "GreaterThan"
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
      }
 ]

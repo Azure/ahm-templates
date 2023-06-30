@@ -31,8 +31,8 @@ $schema = @{
 # Define allowed values for specific properties
 $allowedValues = @{
     aggregationType = @("Average","Maximum","Minimum")
-    degradedOperator = @("GreaterThan", "LowerThan")
-    unhealthyOperator = @("GreaterThan", "LowerThan")
+    degradedOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
+    unhealthyOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
     recommended = @("true", "false")
 }
 
