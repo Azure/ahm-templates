@@ -39,7 +39,7 @@ $allowedValues = @{
 # Validate each object against the schema
 $isSchemaValid = $true
 
-$errorCount = $env:ERROR_COUNT
+$errorCount = 0
 
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
@@ -47,7 +47,6 @@ foreach ($object in $objects) {
         if ($object.$property -isnot $schema[$property]) {
             Write-Host "::error file=$metricsFile::Invalid schema detected for '$property'."
             $isSchemaValid = $false
-            $errorCount++
             break
         }
 
@@ -55,15 +54,14 @@ foreach ($object in $objects) {
         if ($allowedValues.ContainsKey($property) -and $object.$property -notin $allowedValues[$property]) {
             Write-Host "::error file=$metricsFile::Invalid value detected for '$property'. Set to $($object.$property). Allowed values are $($allowedValues[$property])."
             $isSchemaValid = $false
-            $errorCount++
             break
         }
     }
 }
-Write-Host "$errorCount errors detected."
-Write-Output "ERROR_COUNT=$errorCount" >> $env:GITHUB_ENV
-
 
 if ($isSchemaValid) {
     Write-Host "Schema validation successful for $metricsFile."
+} else {
+    Write-Host "Schema validation failed for $metricsFile."
+    exit 1
 }
