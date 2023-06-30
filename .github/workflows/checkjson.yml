@@ -25,7 +25,7 @@ jobs:
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
 
-          if (!$isSchemaValid) {
+          if (!$env:isSchemaValid) {
             Write-Error "Schema validation failed. See errors/warnings above."
             exit 1
           }
