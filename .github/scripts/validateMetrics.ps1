@@ -50,7 +50,7 @@ foreach ($object in $objects) {
 
         # Check if the property value is in the allowed values array
         if ($allowedValues.ContainsKey($property) -and $object.$property -notin $allowedValues[$property]) {
-            Write-Host "::warning file=$metricsFile::Invalid value detected for '$property'. Allowed values are $allowedValues[$property]."
+            Write-Host "::warning file=$metricsFile::Invalid value detected for '$property'. Set to $($object.$property). Allowed values are $($allowedValues[$property])."
             $isSchemaValid = $false
             break
         }
