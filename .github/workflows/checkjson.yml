@@ -23,3 +23,5 @@ jobs:
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
+        with:
+          fail_on_error: true
