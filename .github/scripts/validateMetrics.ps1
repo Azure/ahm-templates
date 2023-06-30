@@ -59,6 +59,8 @@ foreach ($object in $objects) {
     }
 }
 
+Write-Host "$($env:ERROR_COUNT) errors detected."
+
 if ($isSchemaValid) {
     Write-Host "Schema validation successful for $metricsFile."
 }
