@@ -34,13 +34,15 @@ $isSchemaValid = $true
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
         if ($object.$property -isnot $schema[$property]) {
-            Write-Host "::notice file=$metricsFile::Invalid schema detected for '$property' in object:"
+            Write-Host "::warning file=$metricsFile::Invalid schema detected for '$property' in object:"
             # Write-Host $object | ConvertTo-Json -Depth 4
             $isSchemaValid = $false
             break
         }
     }
 }
+
+Write-Host "isSchemaValid=$isSchemaValid" >> $env:GITHUB_ENV
 
 if ($isSchemaValid) {
     Write-Host "Schema validation successful."

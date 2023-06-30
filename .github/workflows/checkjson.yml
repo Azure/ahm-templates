@@ -21,3 +21,8 @@ jobs:
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
+
+          if (!$isSchemaValid) {
+            Write-Error "Schema validation failed. See errors/warnings above."
+            exit 1
+          }
