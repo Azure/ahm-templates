@@ -17,7 +17,7 @@ jobs:
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
-          Write-Host "isSchemaValid=true" >> $env:GITHUB_ENV
+          Write-Host "isSchemaValid=$true" >> $env:GITHUB_ENV
 
           $files |% {
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
