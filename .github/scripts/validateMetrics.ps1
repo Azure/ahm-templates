@@ -25,7 +25,15 @@ $schema = @{
     degradedOperator   = [string]
     unhealthyThreshold = [string]
     unhealthyOperator  = [string]
-    recommended        = [bool]
+    recommended        = [string]
+}
+
+# Define allowed values for specific properties
+$allowedValues = @{
+    aggregationType = @("Average")
+    degradedOperator = @("GreaterThan")
+    unhealthyOperator = @("GreaterThan")
+    recommended = @("true", "false")
 }
 
 # Validate each object against the schema
@@ -33,8 +41,16 @@ $isSchemaValid = $true
 
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
+        # Check if the property exists
         if ($object.$property -isnot $schema[$property]) {
             Write-Host "::warning file=$metricsFile::Invalid schema detected for '$property'."
+            $isSchemaValid = $false
+            break
+        }
+
+        # Check if the property value is in the allowed values array
+        if ($allowedValues.ContainsKey($property) -and $object.$property -notin $allowedValues[$property]) {
+            Write-Host "::warning file=$metricsFile::Invalid value detected for '$property'. Allowed values are $allowedValues[$property]."
             $isSchemaValid = $false
             break
         }
