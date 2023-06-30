@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Validate JSON Schema for metrics.json'
+        id: validation
         shell: pwsh
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
@@ -25,12 +26,12 @@ jobs:
 
       - name: Check Errors and Warnings
         run: |
-          if [[ "${{ steps.run_tests.outputs.errors }}" == "true" ]]; then
+          if [[ "${{ steps.validation.outputs.errors }}" == "true" ]]; then
             echo "Errors were found. Failing the workflow."
             exit 1
           fi
 
-          if [[ "${{ steps.run_tests.outputs.warnings }}" == "true" ]]; then
+          if [[ "${{ steps.validation.outputs.warnings }}" == "true" ]]; then
             echo "Warnings were found. Failing the workflow."
             exit 1
           fi
