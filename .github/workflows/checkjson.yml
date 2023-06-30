@@ -18,14 +18,19 @@ jobs:
         run: |
           $files = Get-ChildItem -Recurse | Where-Object { $_.Name -eq 'metrics.json' }
 
-          Write-Host "isSchemaValid=$true" >> $env:GITHUB_ENV
-
           $files |% {
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
 
-          if (!$env:isSchemaValid) {
-            Write-Error "Schema validation failed. See errors/warnings above."
+      - name: Check Errors and Warnings
+        run: |
+          if [[ "${{ steps.run_tests.outputs.errors }}" == "true" ]]; then
+            echo "Errors were found. Failing the workflow."
             exit 1
-          }
+          fi
+
+          if [[ "${{ steps.run_tests.outputs.warnings }}" == "true" ]]; then
+            echo "Warnings were found. Failing the workflow."
+            exit 1
+          fi

@@ -57,8 +57,6 @@ foreach ($object in $objects) {
     }
 }
 
-Write-Host "isSchemaValid=$isSchemaValid" >> $env:GITHUB_ENV
-
 if ($isSchemaValid) {
     Write-Host "Schema validation successful for $metricsFile."
 }
