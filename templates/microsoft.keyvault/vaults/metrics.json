@@ -17,7 +17,7 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "50",
         "unhealthyOperator": "GreaterThan",
-        "recommended": "truly"
+        "recommended": "true"
      },
      {
         "metricName": "ServiceApiLatency",
