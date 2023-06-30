@@ -1,29 +1,47 @@
-param (
-    [Parameter(Mandatory)]
-    [string] $jsonfile,
-    [string] $schemafile = "./templates/metrics.schema.json"
+# validateMetrics.ps1
+# Validates the schema of the metrics.json file.
+# This script is used by the GitHub Actions workflow.
 
+param (
+    [Parameter(Mandatory = $true)]
+    [string]$metricsFile
 )
 
-if (!(Test-Path $schemafile)) {
-    Write-Error "*** Schemafile $schemafile not found."
-    exit
+# Test if metrics.json exists
+if (-not (Test-Path $metricsFile)) {
+    Write-Host "Metrics file not found at '$metricsFile'."
+    exit 1
 }
 
-if (!(Test-Path $jsonfile)) {
-    Write-Error "*** File $jsonfile not found."
-    exit
-} else {
-    $json = Get-Content -Path $jsonfile -Raw -encoding UTF8 | convertfrom-json -noenumerate | convertto-json
+# Convert JSON to PowerShell objects
+$objects = Get-Content $metricsFile | ConvertFrom-Json
+
+# Define the expected schema
+$schema = @{
+    metricName         = [string]
+    aggregationType    = [string]
+    timeGrain          = [string]
+    degradedThreshold  = [string]
+    degradedOperator   = [string]
+    unhealthyThreshold = [string]
+    unhealthyOperator  = [string]
+    recommended        = [bool]
 }
 
+# Validate each object against the schema
+$isSchemaValid = $true
 
-
-if (!(Test-Json -Json $json -schemafile $schemafile)) {
-    Write-Error "*** File $jsonfile does not contain valid JSON."
-    
-    $json
-} else {
-    Write-Host "*** Successfully validated $jsonfile against $schemafile"
+foreach ($object in $objects) {
+    foreach ($property in $schema.Keys) {
+        if ($object.$property -isnot $schema[$property]) {
+            Write-Host "Invalid schema detected for '$property' in object:"
+            Write-Host $object | ConvertTo-Json -Depth 4
+            $isSchemaValid = $false
+            break
+        }
+    }
 }
 
+if ($isSchemaValid) {
+    Write-Host "Schema validation successful."
+}

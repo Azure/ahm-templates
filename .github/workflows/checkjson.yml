@@ -2,10 +2,10 @@ name: JSON schema validation
 
 on:
   workflow_dispatch:
-  # push:
-  #   paths:
-  #     - 'metrics.json'
-  # pull_request:
+  push:
+    paths:
+      - 'metrics.json'
+  pull_request:
 
 jobs:
   test:
@@ -19,5 +19,5 @@ jobs:
 
           $files |% {
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
-            ./.github/scripts/validateMetrics.ps1 -jsonfile $($_.FullName) -schemafile ./templates/metrics.schema.json
+            ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
