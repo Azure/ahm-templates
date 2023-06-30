@@ -7,7 +7,6 @@
         "degradedOperator": "LowerThan",
         "unhealthyThreshold": "95",
         "unhealthyOperator": "LowerThan",
-        "dataUnit": "Count",
         "recommended": "true"
      }
 ]

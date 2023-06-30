@@ -3,8 +3,6 @@
     "type": "array",
     "additionalItems": true,
     "additionalProperties": {
-        "reference": "string",
-        "description": "string",
         "recommended": "string"
     },
     "minItems": 1,
@@ -32,9 +30,6 @@
           },
           "unhealthyOperator": {
             "type": "string"
-          },
-          "dataUnit": {
-            "type": "string"
           }
         },
         "required": [
@@ -44,8 +39,7 @@
           "degradedThreshold",
           "degradedOperator",
           "unhealthyThreshold",
-          "unhealthyOperator",
-          "dataUnit"
+          "unhealthyOperator"
         ]
       }
     ]
