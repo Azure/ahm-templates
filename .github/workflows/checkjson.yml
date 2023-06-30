@@ -1,4 +1,4 @@
-name: metrics.json schema validation
+name: 'Validate metrics.json schema'
 
 on:
   workflow_dispatch:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   test:
+    name: 'Validate metrics.json schema'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
