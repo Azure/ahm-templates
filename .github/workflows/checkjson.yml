@@ -26,6 +26,8 @@ jobs:
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
 
+          Write-Host "$($env:ERROR_COUNT) errors found in JSON Schema validation."
+
           if ($env:ERROR_COUNT -gt 0) {
             Write-Error "Found $($env:ERROR_COUNT) errors in JSON Schema validation."
             exit 1
