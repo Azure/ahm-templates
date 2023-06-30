@@ -1,4 +1,4 @@
-name: JSON schema validation
+name: metrics.json schema validation
 
 on:
   workflow_dispatch:

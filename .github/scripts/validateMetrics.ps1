@@ -34,8 +34,8 @@ $isSchemaValid = $true
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
         if ($object.$property -isnot $schema[$property]) {
-            Write-Error "Invalid schema detected for '$property' in object:"
-            Write-Host $object | ConvertTo-Json -Depth 4
+            Write-Host "::notice file=$metricsFile::Invalid schema detected for '$property' in object:"
+            //Write-Host $object | ConvertTo-Json -Depth 4
             $isSchemaValid = $false
             break
         }
