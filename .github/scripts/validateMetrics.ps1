@@ -45,6 +45,7 @@ foreach ($object in $objects) {
         if ($object.$property -isnot $schema[$property]) {
             Write-Host "::error file=$metricsFile::Invalid schema detected for '$property'."
             $isSchemaValid = $false
+            Write-Output "ERROR_COUNT=$($env:ERROR_COUNT+1)" >> $env:GITHUB_ENV
             break
         }
 
@@ -52,6 +53,7 @@ foreach ($object in $objects) {
         if ($allowedValues.ContainsKey($property) -and $object.$property -notin $allowedValues[$property]) {
             Write-Host "::error file=$metricsFile::Invalid value detected for '$property'. Set to $($object.$property). Allowed values are $($allowedValues[$property])."
             $isSchemaValid = $false
+            Write-Output "ERROR_COUNT=$($env:ERROR_COUNT+1)" >> $env:GITHUB_ENV
             break
         }
     }
