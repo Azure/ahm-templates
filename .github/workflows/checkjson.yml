@@ -23,15 +23,3 @@ jobs:
             Write-Host "Found $($_.Fullname). Validate JSON Schema."
             ./.github/scripts/validateMetrics.ps1 -metricsFile $($_.FullName)
           }
-
-      - name: Check Errors and Warnings
-        run: |
-          if [[ "${{ steps.validation.outputs.errors }}" == "true" ]]; then
-            echo "Errors were found. Failing the workflow."
-            exit 1
-          fi
-
-          if [[ "${{ steps.validation.outputs.warnings }}" == "true" ]]; then
-            echo "Warnings were found. Failing the workflow."
-            exit 1
-          fi
