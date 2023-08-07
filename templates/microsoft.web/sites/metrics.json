@@ -1,0 +1,12 @@
+[
+    {
+        "metricName": "Http5xx",
+        "aggregationType": "Maximum",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "100",
+        "unhealthyOperator": "GreaterThan",
+        "timeGrain": "PT5M",
+        "recommended": "false"
+     }
+]
