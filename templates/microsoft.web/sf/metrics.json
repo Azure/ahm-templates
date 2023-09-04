@@ -1,0 +1,22 @@
+[
+    {
+        "metricName": "CpuPercentage",
+        "aggregationType": "Average",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "timeGrain": "PT5M",
+        "recommended": "true"
+    },
+    {
+        "metricName": "MemoryPercentage",
+        "aggregationType": "Average",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "timeGrain": "PT1M",
+        "recommended": "true"
+    }
+]
