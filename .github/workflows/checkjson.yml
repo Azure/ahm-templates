@@ -1,4 +1,4 @@
-name: 'Validate metrics.json schema'
+name: 'Validate schema and casing'
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
         run: |
           $directories = Get-ChildItem -Recurse -Path ./templates -Directory
           foreach ($dir in $directories) {
-            if ($dir.Name -ne $dir.Name.ToLower()) {
+            if ($dir.Name -cne $dir.Name.ToLower()) {
               Write-Error "Directory $dir must be lowercase!"
             }
           }
