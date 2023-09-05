@@ -13,6 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: 'All directories to lowercase'
+        id: lowercase
+        shell: pwsh
+        run: |
+          $directories = Get-ChildItem -Recurse -Path ./templates -Directory
+          foreach ($dir in $directories) {
+            if ($dir.Name -ne $dir.Name.ToLower()) {
+              Write-Error "Directory $dir must be lowercase!"
+            }
+          }
+
       - name: 'Validate JSON Schema for metrics.json'
         id: validation
         shell: pwsh
