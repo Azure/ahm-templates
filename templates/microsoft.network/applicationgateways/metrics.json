@@ -4,9 +4,9 @@
         "aggregationType": "Average",
         "timeGrain": "PT5M",
         "degradedThreshold": "1",
-        "degradedOperator": "LessThan",
+        "degradedOperator": "LowerThan",
         "unhealthyThreshold": "1",
-        "unhealthyOperator": "LessThan",
+        "unhealthyOperator": "LowerThan",
         "recommended": "false"
     },
     {
