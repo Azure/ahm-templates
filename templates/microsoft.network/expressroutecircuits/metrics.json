@@ -1,0 +1,22 @@
+[
+    {
+        "metricName": "BgpAvailability",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "ArpAvailability",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "LowerThan",
+        "recommended": "false"
+    }
+]

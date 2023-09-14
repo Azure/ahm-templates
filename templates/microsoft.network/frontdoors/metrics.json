@@ -1,0 +1,12 @@
+[
+    {
+        "metricName": "TotalLatency",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "4000",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "5000",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    }
+]
