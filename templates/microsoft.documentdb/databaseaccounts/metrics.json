@@ -8,5 +8,15 @@
         "unhealthyThreshold": "95",
         "unhealthyOperator": "LowerThan",
         "recommended": "true"
+     },
+     {
+        "metricName": "NormalizedRUConsumption",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
      }
 ]

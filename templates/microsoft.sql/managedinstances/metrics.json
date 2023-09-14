@@ -1,0 +1,12 @@
+[
+    {
+        "metricName": "avg_cpu_percent",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    }
+]
