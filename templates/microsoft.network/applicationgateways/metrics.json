@@ -1,0 +1,22 @@
+[
+    {
+        "metricName": "HealthyHostCount",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "1",
+        "degradedOperator": "LessThan",
+        "unhealthyThreshold": "1",
+        "unhealthyOperator": "LessThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "IfUnderDDoSAttack",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    }
+]
