@@ -1,0 +1,42 @@
+[
+    {
+        "metricName": "CPU",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+     },
+     {
+        "metricName": "DiscoveryLatency",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "10",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "20",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+     },
+     {
+        "metricName": "IngestionLatencyInSeconds",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "10",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "20",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+     },
+     {
+        "metricName": "QueueLength",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "10",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "20",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+     }
+]
