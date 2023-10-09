@@ -4,9 +4,9 @@
         "aggregationType": "Maximum",
         "degradedThreshold": "0",
         "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "100",
+        "unhealthyThreshold": "0",
         "unhealthyOperator": "GreaterThan",
         "timeGrain": "PT5M",
-        "recommended": "false"
+        "recommended": "true"
      }
 ]
