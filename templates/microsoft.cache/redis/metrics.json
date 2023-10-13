@@ -60,16 +60,6 @@
         "recommended": "false"
     },
     {
-        "metricName": "usedmemorypercentage",
-        "aggregationType": "Average",
-        "timeGrain": "PT5M",
-        "degradedThreshold": "75",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "85",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "false"
-    },
-    {
         "metricName": "allusedmemorypercentage",
         "aggregationType": "Maximum",
         "timeGrain": "PT1M",

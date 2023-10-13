@@ -2,7 +2,7 @@
 # Converts alerts from AMBA to the metrics.json schema.
 
 param (
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $false)]
     [string]$inputUrl="https://raw.githubusercontent.com/Azure/azure-monitor-baseline-alerts/main/services/Compute/virtualMachineScaleSets/alerts.yaml"
 )
 
@@ -18,7 +18,18 @@ $operatorMap = @{
     "LessThanOrEqual" = "LowerOrEquals"
 }
 
+$timeAggregationMap = @{
+    "Total" = "Maximum"
+}
+
 foreach ($item in $yamlObject) {
+
+    # translate the timeAggregation if needed
+    if ($timeAggregationMap.ContainsKey($($item.properties.timeAggregation))) {
+        $timeAggregation = $timeAggregationMap[$($item.properties.timeAggregation)]
+    } else {
+        $timeAggregation = $($item.properties.timeAggregation)
+    }
 
     # translate the operator if needed
     if ($operatorMap.ContainsKey($($item.properties.operator))) {
@@ -29,7 +40,7 @@ foreach ($item in $yamlObject) {
 
     $filteredObject = [PSCustomObject]@{
         metricName = $item.name
-        aggregationType = $item.properties.timeAggregation
+        aggregationType = $timeAggregation
         timeGrain = $item.properties.evaluationFrequency
         degradedThreshold = "$($item.properties.threshold)"
         degradedOperator = $operator
