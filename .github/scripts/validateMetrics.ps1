@@ -41,6 +41,12 @@ $isSchemaValid = $true
 
 $errorCount = 0
 
+# Check if metricName is unqiue per metrics.json
+$objects | Group-Object -Property metricName | Where-Object { $_.Count -gt 1 } | ForEach-Object {
+    Write-Host "::error file=$metricsFile::Duplicate metricName detected for '$($_.Name)'."
+    $isSchemaValid = $false
+}
+
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
         # Check if the property exists
@@ -56,6 +62,7 @@ foreach ($object in $objects) {
             $isSchemaValid = $false
             break
         }
+
     }
 }
 
