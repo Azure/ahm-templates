@@ -3,7 +3,7 @@
 
 param (
     [Parameter(Mandatory = $false)]
-    [string]$inputUrl="https://raw.githubusercontent.com/Azure/azure-monitor-baseline-alerts/main/services/Network/loadBalancers/alerts.yaml"
+    [string]$inputUrl="https://raw.githubusercontent.com/Azure/azure-monitor-baseline-alerts/main/services/Synapse/workspaces/alerts.yaml"
 )
 
 $yamlObject = Invoke-WebRequest $inputUrl | `
