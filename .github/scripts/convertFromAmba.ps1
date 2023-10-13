@@ -16,6 +16,7 @@ $filteredObjects = @()
 $operatorMap = @{
     "GreaterThanOrEqual" = "GreaterOrEquals"
     "LessThanOrEqual" = "LowerOrEquals"
+    "LessThan" = "LowerThan"
 }
 
 foreach ($item in $yamlObject) {
