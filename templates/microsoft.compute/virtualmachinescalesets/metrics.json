@@ -1,0 +1,72 @@
+[
+    {
+        "metricName": "Percentage CPU",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "OS Disk IOPS Consumed Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "OS Disk Bandwidth Consumed Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "Data Disk IOPS Consumed Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "Data Disk Used Burst IO Credits Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "Data Disk Used Burst BPS Credits Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "VM Cached IOPS Consumed Percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT30M",
+        "degradedThreshold": "85",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "95",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    }
+]

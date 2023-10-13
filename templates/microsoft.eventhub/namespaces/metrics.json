@@ -8,5 +8,15 @@
         "unhealthyThreshold": "10",
         "unhealthyOperator": "GreaterThan",
         "recommended": "true"
-     }
+     },
+     {
+        "metricName": "UserErrors",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    }
 ]
