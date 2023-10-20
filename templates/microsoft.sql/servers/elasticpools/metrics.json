@@ -1,0 +1,22 @@
+[
+    {
+        "metricName": "cpu_percent",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      },
+      {
+        "metricName": "storage_percent",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      }
+]
