@@ -1,0 +1,22 @@
+[
+    {
+        "metricName": "OriginHealthPercentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "95",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "LowerThan",
+        "recommended": "true"
+      },
+      {
+        "metricName": "Percentage5XX",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "5",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "10",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      }
+]
