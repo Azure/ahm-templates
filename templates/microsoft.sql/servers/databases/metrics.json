@@ -67,6 +67,6 @@
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "90",
         "unhealthyOperator": "GreaterThan",
-        "recommended": "trzue"
+        "recommended": "true"
       }
 ]
