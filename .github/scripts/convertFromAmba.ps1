@@ -28,6 +28,13 @@ foreach ($item in $yamlObject) {
         $operator = $($item.properties.operator)
     }
 
+    # if verified and visibile are both true, then the metric is recommended
+    if ($item.properties.verified && $item.properties.visible) {
+        $recommended = "true"
+    } else {
+        $recommended = "false"
+    }
+
     $filteredObject = [PSCustomObject]@{
         metricName = $item.name
         aggregationType = $item.properties.timeAggregation
@@ -36,12 +43,18 @@ foreach ($item in $yamlObject) {
         degradedOperator = $operator
         unhealthyThreshold = "$($item.properties.threshold)"
         unhealthyOperator = $operator
-        recommended = "false"
+        recommended = $recommended
+        metricNamespace = $item.properties.metricNamespace.toLower()
     }
 
     $filteredObjects += $filteredObject
 }
 
-$jsonOutput = $filteredObjects | ConvertTo-Json
+$groupedData = $filteredObjects | Group-Object -Property metricNamespace
 
-Write-Host $jsonOutput
+foreach ($group in $groupedData) {
+    $namespace = $group.Name
+    $data = $group.Group | Select-Object metricName, aggregationType, timeGrain, degradedThreshold, degradedOperator, unhealthyThreshold, unhealthyOperator, recommended
+    Write-Host "Processing $namespace"
+    $data | ConvertTo-Json
+}
