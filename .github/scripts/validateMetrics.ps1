@@ -30,7 +30,7 @@ $schema = @{
 
 # Define allowed values for specific properties
 $allowedValues = @{
-    aggregationType = @("Average","Maximum","Minimum")
+    aggregationType = @("Average","Maximum","Minimum","Total")
     degradedOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
     unhealthyOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
     recommended = @("true", "false")
@@ -40,6 +40,12 @@ $allowedValues = @{
 $isSchemaValid = $true
 
 $errorCount = 0
+
+# Check if metricName is unqiue per metrics.json
+$objects | Group-Object -Property metricName | Where-Object { $_.Count -gt 1 } | ForEach-Object {
+    Write-Host "::error file=$metricsFile::Duplicate metricName detected for '$($_.Name)'."
+    $isSchemaValid = $false
+}
 
 foreach ($object in $objects) {
     foreach ($property in $schema.Keys) {
@@ -56,6 +62,7 @@ foreach ($object in $objects) {
             $isSchemaValid = $false
             break
         }
+
     }
 }
 

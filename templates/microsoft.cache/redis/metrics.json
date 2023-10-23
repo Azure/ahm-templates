@@ -23,9 +23,49 @@
         "metricName": "errors",
         "aggregationType": "Average",
         "timeGrain": "PT1H",
-        "degradedThreshold": "10",
+        "degradedThreshold": "0",
         "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "20",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "cacheLatency",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "9000",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "10000",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "percentProcessorTime",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "usedmemoryRss",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "11000000000",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "11000000000",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "allusedmemorypercentage",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
         "unhealthyOperator": "GreaterThan",
         "recommended": "true"
     }

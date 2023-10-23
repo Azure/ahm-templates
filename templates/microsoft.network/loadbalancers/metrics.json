@@ -1,22 +1,42 @@
 [
-    {
-        "metricName": "VipAvailability",
-        "aggregationType": "Average",
-        "timeGrain": "PT1M",
-        "degradedThreshold": "100",
-        "degradedOperator": "LowerThan",
-        "unhealthyThreshold": "95",
-        "unhealthyOperator": "LowerThan",
-        "recommended": "true"
-     },
-     {
-        "metricName": "DipAvailability",
-        "aggregationType": "Maximum",
-        "timeGrain": "PT30M",
-        "degradedThreshold": "100",
-        "degradedOperator": "LowerThan",
-        "unhealthyThreshold": "95",
-        "unhealthyOperator": "LowerThan",
-        "recommended": "true"
-     }
+   {
+      "metricName": "VipAvailability",
+      "aggregationType": "Average",
+      "timeGrain": "PT1M",
+      "degradedThreshold": "100",
+      "degradedOperator": "LowerThan",
+      "unhealthyThreshold": "95",
+      "unhealthyOperator": "LowerThan",
+      "recommended": "true"
+   },
+   {
+      "metricName": "DipAvailability",
+      "aggregationType": "Maximum",
+      "timeGrain": "PT30M",
+      "degradedThreshold": "100",
+      "degradedOperator": "LowerThan",
+      "unhealthyThreshold": "95",
+      "unhealthyOperator": "LowerThan",
+      "recommended": "true"
+   },
+   {
+      "metricName": "Global Backend Availability",
+      "aggregationType": "Average",
+      "timeGrain": "PT1M",
+      "degradedThreshold": "90",
+      "degradedOperator": "LowerThan",
+      "unhealthyThreshold": "90",
+      "unhealthyOperator": "LowerThan",
+      "recommended": "false"
+   },
+   {
+      "metricName": "UsedSnatPorts",
+      "aggregationType": "Average",
+      "timeGrain": "PT1M",
+      "degradedThreshold": "900",
+      "degradedOperator": "GreaterThan",
+      "unhealthyThreshold": "1000",
+      "unhealthyOperator": "GreaterThan",
+      "recommended": "false"
+   }
 ]

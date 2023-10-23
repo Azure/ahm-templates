@@ -1,0 +1,72 @@
+[
+    {
+        "metricName": "connection_failed",
+        "aggregationType": "Total",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+      },
+      {
+        "metricName": "deadlock",
+        "aggregationType": "Total",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+      },
+      {
+        "metricName": "blocked_by_firewall",
+        "aggregationType": "Total",
+        "timeGrain": "PT5M",
+        "degradedThreshold": "5",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "5",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+      },
+      {
+        "metricName": "app_memory_percent",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      },
+      {
+        "metricName": "app_cpu_percent",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      },
+      {
+        "metricName": "memory_usage_percent",
+        "aggregationType": "Maximum",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      },
+      {
+        "metricName": "cpu_used",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "80",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+      }
+]

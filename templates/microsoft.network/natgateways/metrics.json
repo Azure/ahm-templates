@@ -1,0 +1,12 @@
+[
+    {
+        "metricName": "DatapathAvailability",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "100",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "99",
+        "unhealthyOperator": "LowerThan",
+        "recommended": "true"
+    }
+]

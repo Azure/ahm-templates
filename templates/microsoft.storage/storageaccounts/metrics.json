@@ -1,11 +1,11 @@
 [
     {
         "metricName": "Availability",
-        "aggregationType": "Minimum",
-        "timeGrain": "PT15M",
+        "aggregationType": "Average",
+        "timeGrain": "PT5M",
         "degradedThreshold": "100",
         "degradedOperator": "LowerThan",
-        "unhealthyThreshold": "99",
+        "unhealthyThreshold": "95",
         "unhealthyOperator": "LowerThan",
         "recommended": "true"
     },
@@ -26,6 +26,26 @@
         "degradedThreshold": "10",
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "15",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "QueueCount",
+        "aggregationType": "Average",
+        "timeGrain": "PT1H",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "false"
+    },
+    {
+        "metricName": "QueueCapacity",
+        "aggregationType": "Average",
+        "timeGrain": "PT1H",
+        "degradedThreshold": "0",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "0",
         "unhealthyOperator": "GreaterThan",
         "recommended": "false"
     }
