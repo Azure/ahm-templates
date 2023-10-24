@@ -1,0 +1,22 @@
+name: 'Count metrics and namespaces'
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'metrics.json'
+  pull_request:
+
+jobs:
+  test:
+    name: 'Count metrics and namespaces'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 'Count metrics and namespaces'
+        id: count
+        shell: pwsh
+        run: |
+          Write-Host "Found $($_.Fullname). Validate JSON Schema."
+          ./.github/scripts/countMetrics.ps1 -inputDir ./templates

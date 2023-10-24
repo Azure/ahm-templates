@@ -1,0 +1,10 @@
+{
+  "metricName": "ThrottledHttpRequestCount",
+  "aggregationType": "Count",
+  "timeGrain": "PT5M",
+  "degradedThreshold": "10",
+  "degradedOperator": "GreaterThan",
+  "unhealthyThreshold": "10",
+  "unhealthyOperator": "GreaterThan",
+  "recommended": "false"
+}

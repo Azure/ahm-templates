@@ -1,0 +1,32 @@
+[
+  {
+    "metricName": "MemoryUsedPercent",
+    "aggregationType": "Maximum",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "CPUPercent",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "DWUUsedPercent",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  }
+]

@@ -39,8 +39,6 @@ $allowedValues = @{
 # Validate each object against the schema
 $isSchemaValid = $true
 
-$errorCount = 0
-
 # Check if metricName is unqiue per metrics.json
 $objects | Group-Object -Property metricName | Where-Object { $_.Count -gt 1 } | ForEach-Object {
     Write-Host "::error file=$metricsFile::Duplicate metricName detected for '$($_.Name)'."
@@ -69,6 +67,6 @@ foreach ($object in $objects) {
 if ($isSchemaValid) {
     Write-Host "Schema validation successful for $metricsFile."
 } else {
-    Write-Host "Schema validation failed for $metricsFile."
+    Write-Host "::error file=$metricsFile::Schema validation failed for $metricsFile."
     exit 1
 }

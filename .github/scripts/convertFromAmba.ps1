@@ -56,5 +56,24 @@ foreach ($group in $groupedData) {
     $namespace = $group.Name
     $data = $group.Group | Select-Object metricName, aggregationType, timeGrain, degradedThreshold, degradedOperator, unhealthyThreshold, unhealthyOperator, recommended
     Write-Host "Processing $namespace"
-    $data | ConvertTo-Json
+
+    # check if file already exists
+    if (Test-Path "./templates/$namespace/metrics.json") {
+        Write-Host "File already exists, merging"
+        $existingData = Get-Content "./templates/$namespace/metrics.json" | ConvertFrom-Json
+        $mergedJson = @{}
+        $existingData + $data | ForEach-Object {
+            $metricName = $_.metricName
+            if (-not $mergedJson.ContainsKey($metricName)) {
+                $mergedJson[$metricName] = $_
+            }
+        }
+        $data = $mergedJson.Values
+
+    } else {
+        New-Item -Path "./templates/$namespace" -ItemType Directory
+    }
+    $data | ConvertTo-Json | Out-File -FilePath "./templates/$namespace/metrics.json"
+
+    
 }

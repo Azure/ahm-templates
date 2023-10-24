@@ -1,22 +1,72 @@
 [
-    {
-        "metricName": "CPUPercent",
-        "aggregationType": "Average",
-        "timeGrain": "PT5M",
-        "degradedThreshold": "85",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "90",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "true"
-    },
-    {
-        "metricName": "MemoryUsedPercent",
-        "aggregationType": "Maximum",
-        "timeGrain": "PT5M",
-        "degradedThreshold": "85",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "95",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "true"
-    }
+  {
+    "metricName": "IntegrationPipelineRunsEnded",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "0",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "BuiltinSqlPoolDataProcessedBytes",
+    "aggregationType": "Total",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "386547056640",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "386547056640",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "CPUPercent",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "85",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "IntegrationTriggerRunsEnded",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "0",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "BuiltinSqlPoolLoginAttempts",
+    "aggregationType": "Total",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "360",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "360",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "MemoryUsedPercent",
+    "aggregationType": "Maximum",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "85",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "95",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "SQLStreamingRuntimeErrors",
+    "aggregationType": "Total",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "0",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  }
 ]
