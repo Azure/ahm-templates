@@ -18,5 +18,4 @@ jobs:
         id: count
         shell: pwsh
         run: |
-          Write-Host "Found $($_.Fullname). Validate JSON Schema."
           ./.github/scripts/countMetrics.ps1 -inputDir ./templates
