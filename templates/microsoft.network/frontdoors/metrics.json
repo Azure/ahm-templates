@@ -1,12 +1,22 @@
 [
-    {
-        "metricName": "TotalLatency",
-        "aggregationType": "Average",
-        "timeGrain": "PT5M",
-        "degradedThreshold": "4000",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "5000",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "false"
-    }
+  {
+    "metricName": "BackendHealthPercentage",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "90",
+    "degradedOperator": "LowerThan",
+    "unhealthyThreshold": "80",
+    "unhealthyOperator": "LowerThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "BackendRequestLatency",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "4500",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "5000",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  }
 ]
