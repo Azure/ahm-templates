@@ -5,7 +5,7 @@ param (
     [string]$inputDir = "./templates"
 )
 
-$metricsFiles = Get-ChildItem metrics.json -Recurse
+$metricsFiles = Get-ChildItem metrics.json -Recurse -Path $inputDir
 $mergedData = @()
 
 foreach ($file in $metricsFiles) {
@@ -38,4 +38,3 @@ $totalMetricNamespaces = ($mergedData | Group-Object -Property metricNamespace).
 
 Write-Host "Total number of metrics defined: $totalMetrics"
 Write-Host "Total number of metric namespaces defined: $($totalMetricNamespaces)"
-#$mergedData

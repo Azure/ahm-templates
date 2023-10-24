@@ -9,7 +9,7 @@ param (
 
 # Test if metrics.json exists
 if (-not (Test-Path $metricsFile)) {
-    Write-Host "Metrics file not found at '$metricsFile'."
+    Write-Host "::error::Metrics file not found at '$metricsFile'."
     exit 1
 }
 
