@@ -36,5 +36,8 @@ foreach ($file in $metricsFiles) {
 $totalMetrics = $mergedData.Count
 $totalMetricNamespaces = ($mergedData | Group-Object -Property metricNamespace).Count
 
+Write-Output "totalMetrics=$($totalMetrics)" >> $Env:GITHUB_OUTPUT
+Write-Output "totalMetricNamespaces=$($totalMetricNamespaces)" >> $Env:GITHUB_OUTPUT
+
 Write-Host "Total number of metrics defined: $totalMetrics"
 Write-Host "Total number of metric namespaces defined: $($totalMetricNamespaces)"

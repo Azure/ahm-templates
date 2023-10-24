@@ -19,3 +19,15 @@ jobs:
         shell: pwsh
         run: |
           ./.github/scripts/countMetrics.ps1 -inputDir ./templates
+
+
+      - uses: actions/github-script@v6
+        id: comment
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'The last commit contains ${{ steps.count.outputs.totalMetrics }} metrics in ${{ steps.count.outputs.totalMetricNamespaces }} namespaces.'
+            })
