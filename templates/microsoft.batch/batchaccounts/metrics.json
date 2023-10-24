@@ -1,0 +1,32 @@
+[
+  {
+    "metricName": "UnusableNodeCount",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "1",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "2.5",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "OfflineNodeCount",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "0",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "TaskFailEvent",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "0",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  }
+]

@@ -1,42 +1,82 @@
 [
-    {
-        "metricName": "CPU",
-        "aggregationType": "Average",
-        "timeGrain": "PT15M",
-        "degradedThreshold": "75",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "90",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "true"
-     },
-     {
-        "metricName": "DiscoveryLatency",
-        "aggregationType": "Average",
-        "timeGrain": "PT15M",
-        "degradedThreshold": "10",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "20",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "false"
-     },
-     {
-        "metricName": "IngestionLatencyInSeconds",
-        "aggregationType": "Average",
-        "timeGrain": "PT15M",
-        "degradedThreshold": "10",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "20",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "false"
-     },
-     {
-        "metricName": "QueueLength",
-        "aggregationType": "Average",
-        "timeGrain": "PT15M",
-        "degradedThreshold": "10",
-        "degradedOperator": "GreaterThan",
-        "unhealthyThreshold": "20",
-        "unhealthyOperator": "GreaterThan",
-        "recommended": "false"
-     }
+  {
+    "metricName": "CacheUtilization",
+    "aggregationType": "Average",
+    "timeGrain": "PT1H",
+    "degradedThreshold": "85",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "95",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "BlobsDropped",
+    "aggregationType": "Total",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "100",
+    "degradedOperator": "GreaterOrEquals",
+    "unhealthyThreshold": "100",
+    "unhealthyOperator": "GreaterOrEquals",
+    "recommended": "false"
+  },
+  {
+    "metricName": "DiscoveryLatency",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "10",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "20",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "QueueLength",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "10",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "20",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "IngestionLatencyInSeconds",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "10",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "20",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "false"
+  },
+  {
+    "metricName": "KeepAlive",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "0.5",
+    "degradedOperator": "LowerOrEquals",
+    "unhealthyThreshold": "0.5",
+    "unhealthyOperator": "LowerOrEquals",
+    "recommended": "false"
+  },
+  {
+    "metricName": "IngestionResult",
+    "aggregationType": "Total",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "300",
+    "degradedOperator": "GreaterOrEquals",
+    "unhealthyThreshold": "300",
+    "unhealthyOperator": "GreaterOrEquals",
+    "recommended": "false"
+  },
+  {
+    "metricName": "CPU",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "75",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  }
 ]

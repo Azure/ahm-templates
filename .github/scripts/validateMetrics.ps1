@@ -9,7 +9,7 @@ param (
 
 # Test if metrics.json exists
 if (-not (Test-Path $metricsFile)) {
-    Write-Host "Metrics file not found at '$metricsFile'."
+    Write-Host "::error::Metrics file not found at '$metricsFile'."
     exit 1
 }
 
@@ -30,7 +30,7 @@ $schema = @{
 
 # Define allowed values for specific properties
 $allowedValues = @{
-    aggregationType = @("Average","Maximum","Minimum","Total")
+    aggregationType = @("Average","Maximum","Minimum","Total","Count")
     degradedOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
     unhealthyOperator = @("GreaterThan","GreaterOrEquals","Equals","LowerThan","LowerOrEquals","Contains")
     recommended = @("true", "false")
@@ -38,8 +38,6 @@ $allowedValues = @{
 
 # Validate each object against the schema
 $isSchemaValid = $true
-
-$errorCount = 0
 
 # Check if metricName is unqiue per metrics.json
 $objects | Group-Object -Property metricName | Where-Object { $_.Count -gt 1 } | ForEach-Object {
@@ -69,6 +67,6 @@ foreach ($object in $objects) {
 if ($isSchemaValid) {
     Write-Host "Schema validation successful for $metricsFile."
 } else {
-    Write-Host "Schema validation failed for $metricsFile."
+    Write-Host "::error file=$metricsFile::Schema validation failed for $metricsFile."
     exit 1
 }
