@@ -1,0 +1,122 @@
+[
+  {
+    "metricName": "Average_% Free Space",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "20",
+    "degradedOperator": "LowerThan",
+    "unhealthyThreshold": "10",
+    "unhealthyOperator": "LowerThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Processor Time",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "90",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Used Memory",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "90",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Used Space",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Committed Bytes In Use",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Heartbeat",
+    "aggregationType": "Total",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "0",
+    "degradedOperator": "LowerOrEquals",
+    "unhealthyThreshold": "0",
+    "unhealthyOperator": "LowerOrEquals",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_Available MBytes",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "768",
+    "degradedOperator": "LowerThan",
+    "unhealthyThreshold": "512",
+    "unhealthyOperator": "LowerThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Available Memory",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "15",
+    "degradedOperator": "LowerThan",
+    "unhealthyThreshold": "10",
+    "unhealthyOperator": "LowerThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Used Inodes",
+    "aggregationType": "Average",
+    "timeGrain": "PT5M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% Used Swap Space",
+    "aggregationType": "Average",
+    "timeGrain": "PT15M",
+    "degradedThreshold": "50",
+    "degradedOperator": "GreaterThan",
+    "unhealthyThreshold": "75",
+    "unhealthyOperator": "GreaterThan",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% IO Wait Time",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "75",
+    "degradedOperator": "GreaterOrEquals",
+    "unhealthyThreshold": "85",
+    "unhealthyOperator": "GreaterOrEquals",
+    "recommended": "true"
+  },
+  {
+    "metricName": "Average_% User Time",
+    "aggregationType": "Average",
+    "timeGrain": "PT1M",
+    "degradedThreshold": "80",
+    "degradedOperator": "GreaterOrEquals",
+    "unhealthyThreshold": "90",
+    "unhealthyOperator": "GreaterOrEquals",
+    "recommended": "true"
+  }
+]
