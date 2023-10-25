@@ -1,0 +1,32 @@
+[
+    {
+        "metricName": "pingmesh",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "1",
+        "degradedOperator": "LowerThan",
+        "unhealthyThreshold": "1",
+        "unhealthyOperator": "LowerThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "usage_user",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "used",
+        "aggregationType": "Average",
+        "timeGrain": "PT1M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "85",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    }
+]
