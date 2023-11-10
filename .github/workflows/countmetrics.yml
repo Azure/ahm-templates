@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'metrics.json'
+      - '**/metrics.json'
   pull_request:
 
 jobs:
