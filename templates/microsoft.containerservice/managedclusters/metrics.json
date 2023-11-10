@@ -2,7 +2,7 @@
     {
         "metricName": "node_cpu_usage_percentage",
         "aggregationType": "Average",
-        "timeGrain": "PT30M",
+        "timeGrain": "PT15M",
         "degradedThreshold": "75",
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "85",
@@ -12,11 +12,31 @@
     {
         "metricName": "node_disk_usage_percentage",
         "aggregationType": "Average",
-        "timeGrain": "PT30M",
+        "timeGrain": "PT15M",
         "degradedThreshold": "75",
         "degradedOperator": "GreaterThan",
         "unhealthyThreshold": "90",
         "unhealthyOperator": "GreaterThan",
         "recommended": "true"
-     }
+    },
+    {
+        "metricName": "node_memory_working_set_percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    },
+    {
+        "metricName": "node_memory_rss_percentage",
+        "aggregationType": "Average",
+        "timeGrain": "PT15M",
+        "degradedThreshold": "75",
+        "degradedOperator": "GreaterThan",
+        "unhealthyThreshold": "90",
+        "unhealthyOperator": "GreaterThan",
+        "recommended": "true"
+    }
 ]
