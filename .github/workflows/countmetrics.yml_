@@ -1,0 +1,33 @@
+name: 'Count metrics and namespaces'
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**/metrics.json'
+  pull_request:
+
+jobs:
+  test:
+    name: 'Count metrics and namespaces'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 'Count metrics and namespaces'
+        id: count
+        shell: pwsh
+        run: |
+          ./.github/scripts/countMetrics.ps1 -inputDir ./templates
+
+
+      - uses: actions/github-script@v6
+        id: comment
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '${{ steps.count.outputs.totalMetrics }} metrics in ${{ steps.count.outputs.totalMetricNamespaces }} namespaces'
+            })
