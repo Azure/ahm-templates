@@ -21,7 +21,7 @@ jobs:
           ./.github/scripts/countMetrics.ps1 -inputDir ./templates
 
 
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v6
         id: comment
         with:
           script: |
