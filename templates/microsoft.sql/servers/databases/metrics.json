@@ -30,7 +30,7 @@
         "recommended": "false"
       },
       {
-        "metricName": "app_memory_percent",
+        "metricName": "sql_instance_memory_percent",
         "aggregationType": "Average",
         "timeGrain": "PT1M",
         "degradedThreshold": "80",
@@ -40,7 +40,7 @@
         "recommended": "true"
       },
       {
-        "metricName": "app_cpu_percent",
+        "metricName": "sql_instance_cpu_percent",
         "aggregationType": "Average",
         "timeGrain": "PT1M",
         "degradedThreshold": "80",
@@ -50,7 +50,7 @@
         "recommended": "true"
       },
       {
-        "metricName": "memory_usage_percent",
+        "metricName": "storage_percent",
         "aggregationType": "Maximum",
         "timeGrain": "PT1M",
         "degradedThreshold": "80",
@@ -60,7 +60,7 @@
         "recommended": "true"
       },
       {
-        "metricName": "cpu_used",
+        "metricName": "cpu_percent",
         "aggregationType": "Average",
         "timeGrain": "PT1M",
         "degradedThreshold": "80",
